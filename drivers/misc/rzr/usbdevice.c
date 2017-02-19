@@ -272,7 +272,7 @@ static int __init privUsbDebugInit(void)
   spin_lock_init(&privateData.sLock);
   privateData.gpio = 0;
   privateData.gpio_power = 0;
-  privateData.default_debug = USBDBG_NO_DEFAULT;
+  privateData.default_debug = 0; /* a1ba: use device mode as default */
 
   platform_driver_register(&private_usbdbg_driver);
   USBDBGProcInit(&privateData);
